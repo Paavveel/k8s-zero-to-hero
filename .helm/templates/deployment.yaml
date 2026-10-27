@@ -25,6 +25,7 @@ spec:
             containerPort: {{ .Values.app.containerPort }}
         - name: nginx
           image: {{ .Values.werf.image.nginx }}
+          command: ["nginx", "-g", "daemon off;"]
           ports:
           - name: http
             containerPort: {{ .Values.nginx.targetPort }}
